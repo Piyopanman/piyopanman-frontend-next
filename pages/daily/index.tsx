@@ -1,12 +1,29 @@
-import Head from "next/head";
+import Layout from "../../components/Layout";
+import DailyContent from "../../components/DailyContent";
 
-export default function Index() {
-  return (
-    <div>
-      <Head>
-        <title>にっぽ〜一覧</title>
-      </Head>
-      <h1>daily/index</h1>
-    </div>
-  );
+interface Props {
+  id: number;
+  date: string;
+  evaluation: string;
 }
+
+const DailyIndex = (props: Props[]) => {
+  return (
+    <Layout title="日報一覧∧( 'Θ' )∧">
+      <h1>日報一覧</h1>
+    </Layout>
+  );
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
+  const json = await res.json();
+  //   console.log(json);
+  return {
+    props: {
+      json,
+    },
+  };
+};
+
+export default DailyIndex;

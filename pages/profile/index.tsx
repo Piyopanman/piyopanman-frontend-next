@@ -1,12 +1,11 @@
-import Head from "next/head";
+import Layout from "../../components/Layout";
 
-export default function Index() {
+const ProfileIndex = () => {
   return (
-    <div>
-      <Head>
-        <title>ぴよぱんまんのプロフィール </title>
-      </Head>
-      <h1>profile/index</h1>
-    </div>
+    <Layout title="プロフィール∧( 'Θ' )∧">
+      <h1>プロフィール</h1>
+    </Layout>
   );
-}
+};
+
+export default ProfileIndex;

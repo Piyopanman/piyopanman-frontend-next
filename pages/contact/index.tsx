@@ -1,12 +1,11 @@
-import Head from "next/head";
+import Layout from "../../components/Layout";
 
-export default function Index() {
+const ContactIndex = () => {
   return (
-    <div>
-      <Head>
-        <title>お問い合わせ∧( 'Θ' )∧</title>
-      </Head>
-      <h1>contact/index</h1>
-    </div>
+    <Layout title="お問い合わせ∧( 'Θ' )∧">
+      <h1>お問い合わせ</h1>
+    </Layout>
   );
-}
+};
+
+export default ContactIndex;
