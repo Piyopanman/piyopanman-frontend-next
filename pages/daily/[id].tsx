@@ -1,14 +1,11 @@
 import Layout from "../../components/Layout";
 import { GetStaticProps, GetStaticPaths } from "next";
+import marked from "marked";
 
 interface Daily {
   id: number;
   date: string;
   evaluation: string;
-}
-
-interface Props {
-  dailies: Daily[];
 }
 
 interface Props {
@@ -21,14 +18,40 @@ interface Props {
   wanna_do: string;
   summary: string;
 }
-
 const DailyDetail: React.FC<Props> = (daily) => {
   return (
     <Layout title="hoge">
-      <h1>hoge</h1>
-      <h1>
-        {daily.id}、{daily.date}、{daily.study}
-      </h1>
+      <h1>{daily.date}</h1>
+      <h1 className="detail-title">大学のこと</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.univ}`)}` }}
+        className="detail-content"
+      ></div>
+      <h1 className="detail-title">勉強</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.study}`)}` }}
+        className="detail-content"
+      ></div>
+      <h1 className="detail-title">その他</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.other}`)}` }}
+        className="detail-content"
+      ></div>
+      <h1 className="detail-title">はじめましてだったこと</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.first_meet}`)}` }}
+        className="detail-content"
+      ></div>
+      <h1 className="detail-title">やりたいこと</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.wanna_do}`)}` }}
+        className="detail-content"
+      ></div>
+      <h1 className="detail-title">1日のまとめ</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: `${marked(`${daily.summary}`)}` }}
+        className="detail-content"
+      ></div>
     </Layout>
   );
 };
