@@ -56,6 +56,16 @@ const DailyDetail: React.FC<Props> = (daily) => {
   );
 };
 
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://piyopanman.pythonanywhere.com/daily/post/${params!.id}`
+  );
+  const daily = await res.json();
+  return {
+    props: daily,
+  };
+};
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
   const json = (await res.json()) as Daily[];
@@ -65,16 +75,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }));
   return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(
-    `https://piyopanman.pythonanywhere.com/daily/post/${params!.id}` //非nullアサーション
-  );
-  const daily = await res.json();
-  return {
-    props: daily,
-  };
 };
 
 export default DailyDetail;
