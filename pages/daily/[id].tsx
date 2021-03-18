@@ -20,7 +20,7 @@ interface Props {
 }
 const DailyDetail: React.FC<Props> = (daily) => {
   return (
-    <Layout title="hoge">
+    <Layout title={`${daily.date} - ぴよぱんまん`}>
       <h1>{daily.date}</h1>
       <h1 className="detail-title">大学のこと</h1>
       <div

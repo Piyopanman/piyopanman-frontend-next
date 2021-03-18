@@ -31,7 +31,7 @@ const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={`${title} - ぴよぱんまん`}>
       <h1>{title}</h1>
       {context.map((c) => (
         <CategoryContent key={c.date} {...c} />
