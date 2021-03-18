@@ -12,6 +12,8 @@ interface Context {
   content: string;
 }
 
+//Sass書く方法調べる
+
 const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
   let title: string;
   if (category === "univ") {
@@ -42,7 +44,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(
     `https://piyopanman.pythonanywhere.com/daily/post/${params!.category}`
   );
-  console.log(params!.category);
   const category = params!.category;
 
   const context = await res.json();
