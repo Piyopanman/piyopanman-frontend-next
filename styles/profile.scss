@@ -11,9 +11,11 @@ $black: #606060;
   padding: 2%;
   text-align: center;
   .title {
-    // font-size: 50px;
     font-size: 3em;
     margin-top: 4%;
+  }
+  img {
+    width: 45%;
   }
 }
 
@@ -118,8 +120,10 @@ $black: #606060;
 
 //スマホ
 @media (max-width: 880px) {
-  .profile_img {
-    width: 50%;
+  .profile {
+    .title {
+      font-size: 2em;
+    }
   }
   .history-container {
     margin: 1%;
