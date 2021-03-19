@@ -6,10 +6,13 @@ import Works from "../../components/pages/profile/Works";
 const ProfileIndex: React.FC = () => {
   return (
     <Layout title="プロフィール - ぴよぱんまん">
-      <h1>プロフィール</h1>
-      <Histories />
-      <Skills />
-      <Works />
+      <div className="profile">
+        <h1 className="title">ぴよぱんまんのプロフィール</h1>
+        <img src="/hiyoko.png" />
+        <Histories />
+        <Skills />
+        <Works />
+      </div>
     </Layout>
   );
 };

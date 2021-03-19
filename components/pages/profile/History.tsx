@@ -6,8 +6,8 @@ interface Props {
 const History: React.FC<Props> = (props) => {
   return (
     <div>
-      <div className="history-date">{props.date}</div>
-      <div className="history-event">{props.event}</div>
+      <p className="history-date">{props.date}</p>
+      <p className="history-event">{props.event}</p>
     </div>
   );
 };
