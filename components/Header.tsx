@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <h1>
         <Link href="/">
           <a>Top</a>
@@ -25,7 +25,6 @@ const Header = () => {
           </Link>
         </li>
       </ul>
-      <hr />
     </div>
   );
 };

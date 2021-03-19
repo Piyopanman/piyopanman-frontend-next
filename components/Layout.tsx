@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Header from "./Header";
+import styles from "./layout.module.scss";
 
 type Props = {
   children?: ReactNode;
@@ -8,7 +9,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = "default title" }: Props) => (
-  <div>
+  <div className={styles.container}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />

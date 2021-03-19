@@ -21,11 +21,11 @@ const DailyContent: React.FC<Props> = (props) => {
   return (
     <div className="daily-content">
       <Link href={`daily/${props.id}`}>
-        <a>{props.date}</a>
+        <a className="date">{props.date}</a>
       </Link>
       <Link href={`daily/${props.id}`}>
         <a>
-          <img src={eva} />
+          <img src={eva} className="evaluation" />
         </a>
       </Link>
     </div>

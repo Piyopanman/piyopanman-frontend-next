@@ -1,6 +1,7 @@
 import Layout from "../../../components/Layout";
 import { GetStaticProps, GetStaticPaths } from "next";
 import CategoryContent from "../../../components/pages/daily/CategoryContent";
+import CategoryList from "../../../components/pages/daily/CategoryList";
 
 interface Props {
   context: Context[];
@@ -32,10 +33,13 @@ const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
 
   return (
     <Layout title={`${title} - ぴよぱんまん`}>
-      <h1>{title}</h1>
-      {context.map((c) => (
-        <CategoryContent key={c.date} {...c} />
-      ))}
+      <CategoryList />
+      <div className="categoryView-container">
+        <h1 className="category-title">{title}</h1>
+        {context.map((c) => (
+          <CategoryContent key={c.date} {...c} />
+        ))}
+      </div>
     </Layout>
   );
 };
