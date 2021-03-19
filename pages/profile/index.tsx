@@ -9,6 +9,7 @@ const ProfileIndex: React.FC = () => {
       <div className="profile">
         <h1 className="title">ぴよぱんまんのプロフィール</h1>
         <img src="/hiyoko.png" />
+        <p>最終更新日：2021年3月19日</p>
         <Histories />
         <Skills />
         <Works />
