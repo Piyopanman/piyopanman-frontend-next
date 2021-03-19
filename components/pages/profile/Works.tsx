@@ -50,8 +50,8 @@ const Works: React.FC = () => {
       title: "日報",
       img: "/profile/daily.png",
       text:
-        "個人開発。1日にやったことをまとめておきたくて作りました。カテゴリ別に見られるところが気に入っています。",
-      techs: "React, Django",
+        "個人開発。1日にやったことをまとめておきたくて作りました。2021年3月にNext.jsとTypeScriptで書き換えました。",
+      techs: " Django, Next.js, TypeScript (以前はReact)",
       link: "https://piyopanman.com/daily",
     },
   ];

@@ -12,23 +12,23 @@ const Skills: React.FC = () => {
     },
     {
       name: "React",
-      text: "ここのフロントエンドに使用",
+      text: "かつてここのフロントエンドに使用していた",
     },
     {
       name: "Next.js",
-      text: "ここのフロントエンドに使用しようとしている",
+      text: "ここのフロントエンドに使用",
     },
     {
       name: "JavaScript",
-      text: "ハッカソンと短期インターンで使用",
+      text: "ハッカソンとNAVI TIMEインターンで使用",
     },
     {
       name: "Go",
-      text: "CAのインターンでAPI書いた(gin,gorm,zap)",
+      text: "CAインターンでAPI書いた(gin,gorm,zap)",
     },
     {
       name: "TypeScript",
-      text: "ここのフロントエンドに使用しようとしている",
+      text: "ここのフロントエンドに使用",
     },
   ];
   return (
