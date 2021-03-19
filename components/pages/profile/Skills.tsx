@@ -26,6 +26,10 @@ const Skills: React.FC = () => {
       name: "Go",
       text: "CAのインターンでAPI書いた(gin,gorm,zap)",
     },
+    {
+      name: "TypeScript",
+      text: "ここのフロントエンドに使用しようとしている",
+    },
   ];
   return (
     <div>
