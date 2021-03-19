@@ -5,7 +5,10 @@ import Works from "../../components/pages/profile/Works";
 
 const ProfileIndex: React.FC = () => {
   return (
-    <Layout title="プロフィール - ぴよぱんまん">
+    <Layout
+      title="プロフィール - ぴよぱんまん"
+      twitter="ぴよぱんまんのプロフィールページ"
+    >
       <div className="profile">
         <h1 className="title">ぴよぱんまんのプロフィール</h1>
         <img src="/hiyoko.png" />

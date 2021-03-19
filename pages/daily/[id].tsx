@@ -21,7 +21,10 @@ interface Props {
 }
 const DailyDetail: React.FC<Props> = (daily) => {
   return (
-    <Layout title={`${daily.date} - ぴよぱんまん`}>
+    <Layout
+      title={`${daily.date} - ぴよぱんまん`}
+      twitter={`ぴよぱんまんの${daily.date}`}
+    >
       <CategoryList />
       <div className="detail-container">
         <h1 className="detail-date">{daily.date}</h1>

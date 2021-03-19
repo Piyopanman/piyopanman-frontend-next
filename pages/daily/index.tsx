@@ -15,7 +15,7 @@ interface Props {
 const DailyIndex: React.FC<Props> = ({ dailies }) => {
   return (
     <div className="main">
-      <Layout title="日報一覧 - ぴよぱんまん">
+      <Layout title="日報一覧 - ぴよぱんまん" twitter="ぴよぱんまんのにっぽ〜">
         <CategoryList />
         <div className="contents-container">
           {dailies.map((d) => (

@@ -19,7 +19,10 @@ const ContactIndex = () => {
   };
 
   return (
-    <Layout title="お問い合わせ - ぴよぱんまん">
+    <Layout
+      title="お問い合わせ - ぴよぱんまん"
+      twitter="ぴよぱんまんへのお問い合わせ"
+    >
       <div className="contact-container">
         <h1>お問い合わせフォーム</h1>
         <form onSubmit={handleSubmit(onSubmit)}>

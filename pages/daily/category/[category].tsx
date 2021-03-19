@@ -32,7 +32,10 @@ const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
   }
 
   return (
-    <Layout title={`${title} - ぴよぱんまん`}>
+    <Layout
+      title={`${title} - ぴよぱんまん`}
+      twitter={`ぴよぱんまんの${title}`}
+    >
       <CategoryList />
       <div className="categoryView-container">
         <h1 className="category-title">{title}</h1>
