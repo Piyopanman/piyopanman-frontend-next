@@ -1,0 +1,70 @@
+$blue: #7ac0cc;
+$white: #eaf9fb;
+$dark_blue: #008299;
+$orange: #eea010;
+$black: #606060;
+
+.contact-container {
+  background-color: #eaf9fb;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 2%;
+  border-radius: 20px;
+  h1 {
+    color: #008299;
+    margin-bottom: 1%;
+  }
+  h2 {
+    color: #606060;
+    margin: 1% 0;
+  }
+  input,
+  textarea {
+    width: 30%;
+    margin-bottom: 2%;
+    border: 2px solid #eea010;
+    border-radius: 10px;
+    padding: 1%;
+  }
+  textarea {
+    width: 50%;
+    height: 70px;
+  }
+  #submit-btn {
+    background-color: #eea010;
+    border: 2px solid #eea010;
+    color: antiquewhite;
+    width: 20%;
+    &:hover {
+      background-color: antiquewhite;
+      color: #eea010;
+      transition: 0.5s;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-container {
+    width: 90%;
+    padding: 2% 3%;
+    h1 {
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 2%;
+    }
+    input,
+    textarea {
+      width: 50%;
+      margin-bottom: 2%;
+      border: 2px solid #eea010;
+      border-radius: 10px;
+      padding: 1%;
+    }
+    textarea {
+      width: 70%;
+    }
+  }
+}
