@@ -13,8 +13,6 @@ interface Context {
   content: string;
 }
 
-//Sass書く方法調べる
-
 const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
   let title: string;
   if (category === "univ") {

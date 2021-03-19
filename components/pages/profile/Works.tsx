@@ -1,9 +1,3 @@
-// import tsuda from "../../../public/profile/TsudaRoomSearch.png"
-// import processing from '../../../public/profile/processing.gif'
-// import povray from '../../../public/profile/povray.png'
-// import repuSearch from '../../../public/profile/TwitterReputationSearch.png'
-// import nippo from '../../../public/profile/daily.png'
-
 import Work from "./Work";
 
 const Works: React.FC = () => {
