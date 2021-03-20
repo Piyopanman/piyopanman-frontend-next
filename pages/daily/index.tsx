@@ -31,9 +31,8 @@ export const getStaticProps = async () => {
   const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
   const dailies = (await res.json()) as Props;
   return {
-    props: {
-      dailies,
-    },
+    props: { dailies },
+    revalidate: 30,
   };
 };
 

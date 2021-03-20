@@ -9,7 +9,7 @@ interface Daily {
   evaluation: string;
 }
 
-interface Props {
+interface Content {
   id: number;
   date: string;
   univ: string;
@@ -19,7 +19,12 @@ interface Props {
   wanna_do: string;
   summary: string;
 }
-const DailyDetail: React.FC<Props> = (daily) => {
+
+interface Props {
+  daily: Content;
+}
+
+const DailyDetail: React.FC<Props> = ({ daily }) => {
   return (
     <Layout
       title={`${daily.date} - ぴよぱんまん`}
@@ -71,7 +76,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   );
   const daily = await res.json();
   return {
-    props: daily,
+    props: { daily },
+    revalidate: 30,
   };
 };
 
@@ -83,7 +89,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       id: j.id.toString(),
     },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export default DailyDetail;

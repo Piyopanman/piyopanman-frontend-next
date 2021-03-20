@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const context = await res.json();
   return {
     props: { context, category },
+    revalidate: 30,
   };
 };
 
@@ -67,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       category: j,
     },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export default DailyCategoryView;
