@@ -1,5 +1,5 @@
 import Layout from "../../../components/Layout";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import CategoryContent from "../../../components/pages/daily/CategoryContent";
 import CategoryList from "../../../components/pages/daily/CategoryList";
 
@@ -13,7 +13,7 @@ interface Context {
   content: string;
 }
 
-const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
+const DailyCategoryView: NextPage<Props> = ({ context, category }) => {
   let title: string;
   if (category === "univ") {
     title = "大学のこと";
@@ -45,19 +45,6 @@ const DailyCategoryView: React.FC<Props> = ({ context, category }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(
-    `https://piyopanman.pythonanywhere.com/daily/post/${params!.category}`
-  );
-  const category = params!.category;
-
-  const context = await res.json();
-  return {
-    props: { context, category },
-    revalidate: 30,
-  };
-};
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(
     "https://piyopanman.pythonanywhere.com/daily/categories/"
@@ -69,6 +56,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }));
   return { paths, fallback: "blocking" };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://piyopanman.pythonanywhere.com/daily/post/${params!.category}`
+  );
+  const category = params!.category;
+
+  const context = await res.json();
+  return {
+    props: { context, category },
+    revalidate: 300,
+  };
 };
 
 export default DailyCategoryView;

@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout";
 import { useForm, SubmitHandler } from "react-hook-form";
 import postContact from "../../api/postContact";
+import { NextPage } from "next";
 
 export type FormData = {
   name: string;
@@ -10,7 +11,7 @@ export type FormData = {
   content: string;
 };
 
-const ContactIndex = () => {
+const ContactIndex: NextPage = () => {
   const { register, handleSubmit, reset } = useForm<FormData>();
   const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
     postContact(data);

@@ -1,9 +1,10 @@
+import { NextPage } from "next";
 import Layout from "../../components/Layout";
 import Histories from "../../components/pages/profile/Histories";
 import Skills from "../../components/pages/profile/Skills";
 import Works from "../../components/pages/profile/Works";
 
-const ProfileIndex: React.FC = () => {
+const ProfileIndex: NextPage = () => {
   return (
     <Layout
       title="プロフィール - ぴよぱんまん"

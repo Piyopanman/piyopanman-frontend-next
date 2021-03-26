@@ -1,3 +1,4 @@
+import { NextPage, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import CategoryList from "../../components/pages/daily/CategoryList";
 import DailyContent from "../../components/pages/daily/DailyContent";
@@ -12,7 +13,7 @@ interface Props {
   dailies: Daily[];
 }
 
-const DailyIndex: React.FC<Props> = ({ dailies }) => {
+const DailyIndex: NextPage<Props> = ({ dailies }) => {
   return (
     <div className="main">
       <Layout title="日報一覧 - ぴよぱんまん" twitter="ぴよぱんまんのにっぽ〜">
@@ -27,7 +28,7 @@ const DailyIndex: React.FC<Props> = ({ dailies }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
   const dailies = (await res.json()) as Props;
   return {

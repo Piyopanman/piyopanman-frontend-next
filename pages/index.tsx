@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import Layout from "../components/Layout";
 
-const IndexPage = () => (
+const IndexPage: NextPage = () => (
   <Layout title="ぴよぱんまん" twitter="🐤ぴよぱんまんどっとこむ🐤">
     <div className="top">
       <h1>ぴよぱんまんのサイトです</h1>

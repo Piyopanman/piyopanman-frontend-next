@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import marked from "marked";
 import CategoryList from "../../components/pages/daily/CategoryList";
 
@@ -24,7 +24,7 @@ interface Props {
   daily: Content;
 }
 
-const DailyDetail: React.FC<Props> = ({ daily }) => {
+const DailyDetail: NextPage<Props> = ({ daily }) => {
   return (
     <Layout
       title={`${daily.date} - ぴよぱんまん`}
@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const daily = await res.json();
   return {
     props: { daily },
-    revalidate: 30,
+    revalidate: 300,
   };
 };
 
