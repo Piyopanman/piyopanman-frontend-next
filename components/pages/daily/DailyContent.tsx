@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
   id: number;
@@ -25,7 +26,14 @@ const DailyContent: React.FC<Props> = (props) => {
       </Link>
       <Link href={`daily/${props.id}`}>
         <a>
-          <img src={eva} className="evaluation" />
+          <Image
+            src={eva}
+            alt="evaluation"
+            width={100}
+            height={100}
+            layout="responsive"
+            className="evaluation"
+          />
         </a>
       </Link>
     </div>
