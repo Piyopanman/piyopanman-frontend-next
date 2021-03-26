@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
     },
     {
       name: "Next.js",
-      text: "ここのフロントエンドに使用",
+      text: "ここのフロントエンド、クックパッドインターンで使用",
     },
     {
       name: "JavaScript",
@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
     },
     {
       name: "TypeScript",
-      text: "ここのフロントエンドに使用",
+      text: "ここのフロントエンド、クックパッドインターンで使用",
     },
   ];
   return (
