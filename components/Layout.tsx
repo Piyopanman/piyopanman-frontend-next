@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Head from "next/head";
+import { Head, Html } from "next/document";
 import Header from "./Header";
 import styles from "./layout.module.scss";
 
@@ -11,10 +11,11 @@ type Props = {
 
 const Layout = ({
   children,
-  title = "default title",
+  title = "ぴよぱんまん",
   twitter = "🐤ぴよぱんまん🐤",
 }: Props) => (
   <div className={styles.container}>
+    <Html lang="ja" dir="ltr" />
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
