@@ -44,9 +44,18 @@ const Works: React.FC = () => {
       title: "日報",
       img: "/profile/daily.png",
       text:
-        "個人開発。1日にやったことをまとめておきたくて作りました。2021年3月にNext.jsとTypeScriptで書き換えました。",
-      techs: " Django, Next.js, TypeScript (以前はReact)",
+        "個人開発。1日にやったことをまとめておきたくて作りました。2021年3月に３日間くらいでNext.jsとTypeScriptで書き換えました。",
+      techs: " Django, Next.js, TypeScript (以前はReact, Javacript)",
       link: "https://piyopanman.com/daily",
+    },
+    {
+      key: 6,
+      title: "とうらぶ練度チェッカー",
+      img: "/profile/tkrb-exp-checker.png",
+      text:
+        "個人開発。自分の大好きなゲーム「刀剣乱舞」のキャラクターの累計経験値を可視化するwebアプリ。一緒に過ごしてきた刀剣男士たちの成長を振り返りたくて作りました。",
+      techs: "Go(gin, gorm, zap), TypeScript, React",
+      link: "https://tkrb-exp-checker.piyopanman.com",
     },
   ];
   return (
