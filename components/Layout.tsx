@@ -25,10 +25,7 @@ const Layout = ({
       <meta property="og:url" content="https://piyopanman.com" />
       <meta property="og:title" content="ぴよぱんまん" />
       <meta property="og:description" content={`${twitter}`} />
-      <meta
-        property="og:image"
-        content="https://piyopanman-piyopanman.vercel.app/logo192.png"
-      />
+      <meta property="og:image" content="https://piyopanman.com/niwatori.png" />
     </Head>
     <Header />
     {children}
