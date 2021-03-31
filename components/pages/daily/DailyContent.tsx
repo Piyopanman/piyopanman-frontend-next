@@ -10,13 +10,13 @@ interface Props {
 const DailyContent: React.FC<Props> = (props) => {
   let eva: string;
   if (props.evaluation === "perfect") {
-    eva = "/daily/hiyoko_perfect.png";
+    eva = "/daily/niwatori_perfect.png";
   } else if (props.evaluation === "good") {
-    eva = "/daily/hiyoko_good.png";
+    eva = "/daily/niwatori_good.png";
   } else if (props.evaluation === "soso") {
-    eva = "/daily/hiyoko_soso.png";
+    eva = "/daily/niwatori_soso.png";
   } else {
-    eva = "/daily/hiyoko_bad.png";
+    eva = "/daily/niwatori_bad.png";
   }
 
   return (
