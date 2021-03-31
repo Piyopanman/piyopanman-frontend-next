@@ -6,7 +6,7 @@ const IndexPage: NextPage = () => (
     <div className="top">
       <h1>ぴよぱんまんのサイトです</h1>
       <p>∧( 'Θ' )∧</p>
-      <img src="/hiyoko.png" />
+      <img src="/hiyoko_dummy.png" />
     </div>
   </Layout>
 );
