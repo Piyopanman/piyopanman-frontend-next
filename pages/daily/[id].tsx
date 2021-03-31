@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import marked from "marked";
+import ReactMarkdown from "react-markdown";
 import CategoryList from "../../components/pages/daily/CategoryList";
 
 interface Daily {
@@ -34,37 +34,23 @@ const DailyDetail: NextPage<Props> = ({ daily }) => {
       <div className="detail-container">
         <h1 className="detail-date">{daily.date}</h1>
         <h1 className="detail-title">大学のこと</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: `${marked(`${daily.univ}`)}` }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">{daily.univ}</ReactMarkdown>
         <h1 className="detail-title">勉強</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: `${marked(`${daily.study}`)}` }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">{daily.study}</ReactMarkdown>
         <h1 className="detail-title">その他</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: `${marked(`${daily.other}`)}` }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">{daily.other}</ReactMarkdown>
         <h1 className="detail-title">はじめましてだったこと</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${marked(`${daily.first_meet}`)}`,
-          }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">
+          {daily.first_meet}
+        </ReactMarkdown>
         <h1 className="detail-title">やりたいこと</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: `${marked(`${daily.wanna_do}`)}` }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">
+          {daily.wanna_do}
+        </ReactMarkdown>
         <h1 className="detail-title">1日のまとめ</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: `${marked(`${daily.summary}`)}` }}
-          className="detail-content"
-        ></div>
+        <ReactMarkdown className="detail-content">
+          {daily.summary}
+        </ReactMarkdown>
       </div>
     </Layout>
   );

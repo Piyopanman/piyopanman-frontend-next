@@ -1,4 +1,4 @@
-import marked from "marked";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
   date: string;
@@ -9,9 +9,7 @@ const CategoryContent: React.FC<Props> = (props) => {
   return (
     <div className="category-content">
       <h1 className="category-date">{props.date}</h1>
-      <div
-        dangerouslySetInnerHTML={{ __html: `${marked(`${props.content}`)}` }}
-      ></div>
+      <ReactMarkdown>{props.content}</ReactMarkdown>
     </div>
   );
 };
