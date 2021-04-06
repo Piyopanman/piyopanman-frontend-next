@@ -54,7 +54,12 @@ const ContactIndex: NextPage = () => {
           />
           <br></br>
           <h2>推し（言語、アーティストなど分野問わず）</h2>
-          <input type="text" name="oshi" ref={register} placeholder="Java" />
+          <input
+            type="text"
+            name="oshi"
+            ref={register}
+            placeholder="Javaと刀剣乱舞の源清麿"
+          />
           <br></br>
           <h2>お問い合わせ内容（必須）</h2>
           <textarea
