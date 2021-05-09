@@ -26,7 +26,9 @@ const EvaluationChart: React.FC<Ratio> = (props) => {
   return (
     <div className="evaluation-chart">
       <h1>1日の評価の割合</h1>
-      <Pie data={data} type="pie" />
+      <div className="chart">
+        <Pie data={data} type="pie" />
+      </div>
     </div>
   );
 };

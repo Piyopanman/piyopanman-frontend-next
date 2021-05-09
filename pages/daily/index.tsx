@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const ratio = (await res2.json()) as Props;
   return {
     props: { dailies, ratio },
-    revalidate: 30,
+    revalidate: 300,
   };
 };
 

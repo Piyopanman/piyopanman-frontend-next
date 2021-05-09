@@ -174,12 +174,15 @@ a {
     font-size: 20px;
     text-align: center;
   }
+  .chart {
+    width: 80%;
+    margin: 0 auto;
+  }
   display: block;
   background-color: $white;
   margin: 1%;
   margin-top: 300px;
   width: 25%;
-  height: 260px;
   padding: 20px 0px;
   border: 4px solid $orange;
   border-radius: 10px;
@@ -293,7 +296,7 @@ a {
     display: block;
     position: relative;
     margin: 1em auto;
-    height: 340px;
+    height: 280px;
   }
 
   .categoryView-container {
