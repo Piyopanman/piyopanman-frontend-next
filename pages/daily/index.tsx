@@ -2,7 +2,7 @@ import { NextPage, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import CategoryList from "../../components/pages/daily/CategoryList";
 import DailyContent from "../../components/pages/daily/DailyContent";
-import { EvaluationChart } from "../../components/pages/daily/EvaluationChart";
+import EvaluationChart from "../../components/pages/daily/EvaluationChart";
 
 interface Daily {
   id: number;

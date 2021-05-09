@@ -288,6 +288,14 @@ a {
     margin: 1em auto;
   }
 
+  .evaluation-chart {
+    width: 80%;
+    display: block;
+    position: relative;
+    margin: 1em auto;
+    height: 340px;
+  }
+
   .categoryView-container {
     @include phone();
     padding: 1%;

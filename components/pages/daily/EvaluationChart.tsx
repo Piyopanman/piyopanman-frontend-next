@@ -1,12 +1,11 @@
 import { Ratio } from "../../../pages/daily/index";
 import { Pie } from "react-chartjs-2";
 
-export const EvaluationChart: React.FC<Ratio> = (props) => {
+const EvaluationChart: React.FC<Ratio> = (props) => {
   const data = {
     labels: ["perfect", "good", "soso", "bad"],
     datasets: [
       {
-        label: "# of Votes",
         data: [props.perfect, props.good, props.soso, props.bad],
         backgroundColor: [
           "rgb(240, 53, 47, 0.5)",
@@ -31,3 +30,5 @@ export const EvaluationChart: React.FC<Ratio> = (props) => {
     </div>
   );
 };
+
+export default EvaluationChart;
