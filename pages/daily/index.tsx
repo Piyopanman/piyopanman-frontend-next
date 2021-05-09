@@ -2,6 +2,7 @@ import { NextPage, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import CategoryList from "../../components/pages/daily/CategoryList";
 import DailyContent from "../../components/pages/daily/DailyContent";
+import { EvaluationChart } from "../../components/pages/daily/EvaluationChart";
 
 interface Daily {
   id: number;
@@ -9,15 +10,24 @@ interface Daily {
   evaluation: string;
 }
 
-interface Props {
-  dailies: Daily[];
+export interface Ratio {
+  perfect: number;
+  good: number;
+  soso: number;
+  bad: number;
 }
 
-const DailyIndex: NextPage<Props> = ({ dailies }) => {
+interface Props {
+  dailies: Daily[];
+  ratio: Ratio;
+}
+
+const DailyIndex: NextPage<Props> = ({ dailies, ratio }) => {
   return (
     <div className="main">
       <Layout title="日報一覧 - ぴよぱんまん" twitter="ぴよぱんまんのにっぽ〜">
         <CategoryList />
+        <EvaluationChart {...ratio} />
         <div className="contents-container">
           {dailies.map((d) => (
             <DailyContent key={d.date} {...d} />
@@ -29,10 +39,14 @@ const DailyIndex: NextPage<Props> = ({ dailies }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
-  const dailies = (await res.json()) as Props;
+  const res1 = await fetch("https://piyopanman.pythonanywhere.com/daily/");
+  const dailies = (await res1.json()) as Props;
+  const res2 = await fetch(
+    "https://piyopanman.pythonanywhere.com/daily/ratio/"
+  );
+  const ratio = (await res2.json()) as Props;
   return {
-    props: { dailies },
+    props: { dailies, ratio },
     revalidate: 30,
   };
 };

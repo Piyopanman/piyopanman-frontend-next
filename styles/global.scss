@@ -167,6 +167,20 @@ a {
   }
 }
 
+//パイチャート
+.evaluation-chart {
+  display: block;
+  background-color: $white;
+  margin: 1%;
+  width: 25%;
+  height: 230px;
+  padding: 20px 0px;
+  border: 4px solid $orange;
+  border-radius: 10px;
+  position: fixed;
+  right: 0;
+}
+
 //mixin
 
 @mixin detail-cat-container {
