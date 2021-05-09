@@ -169,11 +169,17 @@ a {
 
 //パイチャート
 .evaluation-chart {
+  h1 {
+    color: $orange;
+    font-size: 20px;
+    text-align: center;
+  }
   display: block;
   background-color: $white;
   margin: 1%;
+  margin-top: 300px;
   width: 25%;
-  height: 230px;
+  height: 260px;
   padding: 20px 0px;
   border: 4px solid $orange;
   border-radius: 10px;
