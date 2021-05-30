@@ -2,6 +2,9 @@ import Layout from "../../../components/Layout";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import CategoryContent from "../../../components/pages/daily/CategoryContent";
 import CategoryList from "../../../components/pages/daily/CategoryList";
+import { useRecoilValue } from "recoil";
+import { evaluationRatioState } from "../../../recoil/atoms/evaluationRatio";
+import EvaluationChart from "../../../components/pages/daily/EvaluationChart";
 
 interface Props {
   context: Context[];
@@ -14,6 +17,7 @@ interface Context {
 }
 
 const DailyCategoryView: NextPage<Props> = ({ context, category }) => {
+  const evaluationRatio = useRecoilValue(evaluationRatioState);
   let title: string;
   if (category === "univ") {
     title = "大学のこと";
@@ -35,6 +39,7 @@ const DailyCategoryView: NextPage<Props> = ({ context, category }) => {
       twitter={`ぴよぱんまんの${title}`}
     >
       <CategoryList />
+      <EvaluationChart {...evaluationRatio} />
       <div className="categoryView-container">
         <h1 className="category-title">{title}</h1>
         {context.map((c) => (
