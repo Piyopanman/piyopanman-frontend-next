@@ -1,4 +1,4 @@
-import { Ratio } from "../../../pages/daily/index";
+import { Ratio } from "../../../recoil/atoms/evaluationRatio";
 import { Pie } from "react-chartjs-2";
 
 const EvaluationChart: React.FC<Ratio> = (props) => {

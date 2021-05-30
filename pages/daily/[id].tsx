@@ -2,6 +2,9 @@ import Layout from "../../components/Layout";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import ReactMarkdown from "react-markdown";
 import CategoryList from "../../components/pages/daily/CategoryList";
+import { useRecoilValue } from "recoil";
+import { evaluationRatioState } from "../../recoil/atoms/evaluationRatio";
+import EvaluationChart from "../../components/pages/daily/EvaluationChart";
 
 interface Daily {
   id: number;
@@ -25,12 +28,14 @@ interface Props {
 }
 
 const DailyDetail: NextPage<Props> = ({ daily }) => {
+  const evaluationRatio = useRecoilValue(evaluationRatioState);
   return (
     <Layout
       title={`${daily.date} - ぴよぱんまん`}
       twitter={`ぴよぱんまんの${daily.date}`}
     >
       <CategoryList />
+      <EvaluationChart {...evaluationRatio} />
       <div className="detail-container">
         <h1 className="detail-date">{daily.date}</h1>
         <h1 className="detail-title">大学のこと</h1>

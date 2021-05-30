@@ -1,8 +1,15 @@
 import { NextPage, GetStaticProps } from "next";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { getEvaluationRatio } from "../../api/getEvaluationRatio";
 import Layout from "../../components/Layout";
 import CategoryList from "../../components/pages/daily/CategoryList";
 import DailyContent from "../../components/pages/daily/DailyContent";
 import EvaluationChart from "../../components/pages/daily/EvaluationChart";
+import {
+  evaluationRatioState,
+  Ratio,
+} from "../../recoil/atoms/evaluationRatio";
 
 interface Daily {
   id: number;
@@ -10,24 +17,26 @@ interface Daily {
   evaluation: string;
 }
 
-export interface Ratio {
-  perfect: number;
-  good: number;
-  soso: number;
-  bad: number;
-}
-
 interface Props {
   dailies: Daily[];
-  ratio: Ratio;
 }
 
-const DailyIndex: NextPage<Props> = ({ dailies, ratio }) => {
+const DailyIndex: NextPage<Props> = ({ dailies }) => {
+  const [evaluationRatio, setEvaluationRatio] =
+    useRecoilState(evaluationRatioState);
+  useEffect(() => {
+    const func = async () => {
+      const res = (await getEvaluationRatio()) as Ratio;
+      setEvaluationRatio(res);
+    };
+    func();
+  }, []);
+
   return (
     <div className="main">
       <Layout title="日報一覧 - ぴよぱんまん" twitter="ぴよぱんまんのにっぽ〜">
         <CategoryList />
-        <EvaluationChart {...ratio} />
+        <EvaluationChart {...evaluationRatio} />
         <div className="contents-container">
           {dailies.map((d) => (
             <DailyContent key={d.date} {...d} />
@@ -39,14 +48,10 @@ const DailyIndex: NextPage<Props> = ({ dailies, ratio }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res1 = await fetch("https://piyopanman.pythonanywhere.com/daily/");
-  const dailies = (await res1.json()) as Props;
-  const res2 = await fetch(
-    "https://piyopanman.pythonanywhere.com/daily/ratio/"
-  );
-  const ratio = (await res2.json()) as Props;
+  const res = await fetch("https://piyopanman.pythonanywhere.com/daily/");
+  const dailies = (await res.json()) as Props;
   return {
-    props: { dailies, ratio },
+    props: { dailies },
     revalidate: 300,
   };
 };
