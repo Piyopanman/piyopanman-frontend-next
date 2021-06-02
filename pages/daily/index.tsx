@@ -1,15 +1,10 @@
 import { NextPage, GetStaticProps } from "next";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { getEvaluationRatio } from "../../api/getEvaluationRatio";
+import { useRecoilValue } from "recoil";
 import Layout from "../../components/Layout";
 import CategoryList from "../../components/pages/daily/CategoryList";
 import DailyContent from "../../components/pages/daily/DailyContent";
 import EvaluationChart from "../../components/pages/daily/EvaluationChart";
-import {
-  evaluationRatioState,
-  Ratio,
-} from "../../recoil/atoms/evaluationRatio";
+import { evaluationRatioState } from "../../recoil/atoms/evaluationRatio";
 
 interface Daily {
   id: number;
@@ -22,15 +17,7 @@ interface Props {
 }
 
 const DailyIndex: NextPage<Props> = ({ dailies }) => {
-  const [evaluationRatio, setEvaluationRatio] =
-    useRecoilState(evaluationRatioState);
-  useEffect(() => {
-    const func = async () => {
-      const res = (await getEvaluationRatio()) as Ratio;
-      setEvaluationRatio(res);
-    };
-    func();
-  }, []);
+  const evaluationRatio = useRecoilValue(evaluationRatioState);
 
   return (
     <div className="main">

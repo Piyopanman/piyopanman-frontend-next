@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { getEvaluationRatio } from "../../api/getEvaluationRatio";
 
 export interface Ratio {
   perfect: number;
@@ -15,4 +16,13 @@ export const evaluationRatioState = atom({
     soso: 25,
     bad: 25,
   },
+  effects_UNSTABLE: [
+    ({ setSelf }) => {
+      const func = async () => {
+        const res = (await getEvaluationRatio()) as Ratio;
+        setSelf(res);
+      };
+      func();
+    },
+  ],
 });
