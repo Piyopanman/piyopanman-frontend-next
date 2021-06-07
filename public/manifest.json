@@ -1,0 +1,29 @@
+{
+  "name": "ぴよぱんまんどっとこむ",
+  "short_name": "ぴよぱんまん",
+  "icons": [
+    {
+      "src": "/hiyoko02.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/hiyoko02.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/hiyoko02.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#7ac0cc",
+  "background_color": "#7ac0cc",
+  "start_url": "/daily",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "🐤ぴよぱんまんのサイトです🐤",
+  "lang": "ja-jp"
+}
