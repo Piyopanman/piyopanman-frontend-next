@@ -4,7 +4,7 @@ const Skills: React.FC = () => {
   const skills = [
     {
       name: "Java",
-      text: "大学で2年間。GoFのデザパタ面白い",
+      text: "大学で2年間。GoFのデザパタ面白い。少しだけServletとJSP",
     },
     {
       name: "Django",
@@ -12,11 +12,11 @@ const Skills: React.FC = () => {
     },
     {
       name: "React",
-      text: "かつてここのフロントエンドに使用していた",
+      text: "かつてここのフロントエンドに使用していたり、個人開発で使ったり",
     },
     {
       name: "Next.js",
-      text: "ここのフロントエンド、クックパッドインターンで使用",
+      text: "クックパッドインターンで使用したり、個人開発で使ったり",
     },
     {
       name: "JavaScript",
@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
     },
     {
       name: "TypeScript",
-      text: "ここのフロントエンド、クックパッドインターンで使用",
+      text: "クックパッドインターンで使用したり、個人開発で使ったり",
     },
   ];
   return (
