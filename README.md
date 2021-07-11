@@ -2,10 +2,6 @@
 
 [ぴよぱんまんどっとこむ](https://piyopanman.com/)を[JavaScript + React](https://github.com/Piyopanman/piyopanman-daily-frontend)から TypeScript + Next.js で書き換えました！
 
-## 記事
-
-近いうちに書く（宣言して逃げ道を塞いでいくスタイル）
-
 ## フロントの使用技術
 
 - **TypeScript**
