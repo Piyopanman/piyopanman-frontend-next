@@ -1,6 +1,6 @@
 # :baby_chick: ぴよぱんまんのサイト :baby_chick:
 
-[ぴよぱんまんどっとこむ](piyopanman.com)を[JavaScript + React](https://github.com/Piyopanman/piyopanman-daily-frontend)から TypeScript + Next.js で書き換えました！
+[ぴよぱんまんどっとこむ](https://piyopanman.com/)を[JavaScript + React](https://github.com/Piyopanman/piyopanman-daily-frontend)から TypeScript + Next.js で書き換えました！
 
 ## 記事
 
