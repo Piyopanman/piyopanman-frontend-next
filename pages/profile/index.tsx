@@ -13,7 +13,7 @@ const ProfileIndex: NextPage = () => {
       <div className="profile">
         <h1 className="title">ぴよぱんまんのプロフィール</h1>
         <img src="/hiyoko.png" />
-        <p>最終更新日：2021年6月21日</p>
+        <p>最終更新日：2021年9月18日</p>
         <Histories />
         <Skills />
         <Works />
